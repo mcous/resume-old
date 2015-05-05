@@ -20,7 +20,7 @@ WeasyPrint runs on Python. This project uses [pyenv](https://github.com/yyuu/pye
 
 ### how-to
 
-* `$ make install - installs dependencies and creates a fancy python virtualenv`
+* `$ make install` - installs dependencies and creates a fancy python virtualenv
 * `$ make` - makes a fancy html and pdf of the resume
 * `$ make clean` - deletes the fancy html and pdf of the resume
 * `$ make publish` - publishes the fancy html and pdf of the resume to the `gh-pages` branch

@@ -1,4 +1,4 @@
 .python-version
 *.html
 *.pdf
-deploy
+publish

@@ -7,7 +7,7 @@ WEASY_OPTS =
 
 SRC_FILES = resume.md resume.css
 BUILD_FILES = index.html cousins.pdf
-DEPLOY_FILES = resume.css $(BUILD_FILES)
+PUBLISH_FILES = CNAME resume.css $(BUILD_FILES)
 
 GH_REPO = mcous/resume
 
@@ -36,16 +36,17 @@ watch:
 unwatch:
 	watchman watch-del $(shell pwd)
 
-deploy: cousins.pdf
-	mkdir deploy
-	cp $(DEPLOY_FILES) deploy
-	cd deploy && \
+ghRepo = $(shell git config --local remote.origin.url)
+publish: cousins.pdf
+	mkdir publish
+	cp $(PUBLISH_FILES) publish
+	cd publish && \
 	git init && \
 	git add --all && \
 	git commit -m "deploy $(shell date '+%Y/%m/%d %H:%M:%S %Z')" && \
-	git push "git@github.com:$(GH_REPO).git" master:gh-pages --force && \
+	git push $(ghRepo) master:gh-pages --force && \
 	cd .. && \
-	rm -rf deploy
+	rm -rf publish
 
 cousins.pdf: index.html resume.css
 	weasyprint index.html cousins.pdf
