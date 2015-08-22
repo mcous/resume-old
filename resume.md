@@ -1,42 +1,65 @@
-# Mike J. Cousins #
-_<mike@cousins.io>  -  [cousins.io](http://cousins.io)  -  [github.com/mcous](http://github.com/mcous)_
+# Mike J. Cousins <small>_<mike@cousins.io>  -  [cousins.io](http://cousins.io)  -  [github.com/mcous](http://github.com/mcous)_</small>
 
 - - -
 
-## Profile ##
-Mechatronics engineer with a creative mind and a love of making. Shaping the future of how we interact with technology. Engineer, developer, and designer.
+## Profile
+
+Hardware / firmware / software engineer with a creative mind and a love of making. Shaping the future of how we interact with technology.
 
 - - -
 
-## Work Experience ##
+## Technical Skills
 
-### Keen Home, New York, NY - [keenhome.io](http://keenhome.io) ###
-**Mechatronics Engineer** - November 2014 to Present
+### Development and Electronics
 
-- Test Smart Vent prototypes for mechanical, electrical, and firmware functionality
-- Create prototype hardware for platform integration of Smart Vent product
-- Evaluate datasheets and physical samples of possible components for Smart Vent and future products
-- Design and print prototype 3D parts for Smart Vent development
-- Collaborate with R&D team for future product design
+- Programmed systems using **SiLabs ZigBee SoCs**, **8-bit AVR MCUs**, and **TI BTLE SoCs** in **C and C++**
+- Developed test equipment software in **Scala** with **Websocket-based HTML5 GUI**
+- Published [**npm**](https://www.npmjs.com/~mcous) modules for PCB rendering in **JavaScipt** and **CoffeeScript**
+- Designed and built up to four-layer PCBs for both mixed SMT and thru-hole and **completely SMT** components
 
-### Wiley Cousins, New Orleans, LA - [wileycousins.com](http://wileycousins.com) ###
+### 3D design
+
+- Engineered consumer products and personal projects in **Pro/Engineer** and **SolidWorks**
+- 3D printed on Objet resin printers and MakerBot ABS FDM printers for functional and looks-like testing
+
+- - -
+
+## Work Experience
+
+### Keen Home, New York, NY - [keenhome.io](http://keenhome.io)
+
+**Senior Product Engineer** - July 2015 to present
+
+- Shipped production Smart Vent Firmware
+- Developed software for assembly-line test fixtures
+- Managing embedded development and working closely with software team for Smart Bridge integration
+
+**Mechatronics Engineer** - November 2014 to July 2015
+
+- Rewrote Smart Vent firmware for reliability and maintainability
+- Tested Smart Vent prototypes for mechanical, electrical, and firmware functionality
+- Created prototype hardware and software for platform integration of Smart Vent product
+- Designed and printed prototype 3D parts for Smart Vent development
+
+### Wiley Cousins, New Orleans, LA - [wileycousins.com](http://wileycousins.com)
+
 **Co-founder and Hardware Engineer** - October 2013 to October 2014
 
-- clockblock ([clockblocknola.com](http://clockblocknola.com) + [github.com/wileycousins/clockblock](http://github.com/wileycousins/clockblock))
+- clockblock ([github.com/wileycousins/clockblock](https://github.com/wileycousins/clockblock))
   - Built complete electronics package for product, including component selection, PCB, and firmware
   - Created CAD assembly in SolidWorks for fit testing and CNC machining
-- Developed electronics for next product ([github.com/wileycousins/lamp](http://github.com/wileycousins/lamp))
-- Taught hands-on twelve week circuits class bringing ten students from no circuit knowledge to an understanding of digital logic
+- Taught hands-on twelve week circuits class bringing ten students to an understanding of digital logic
 
-### Lightwave, New Orleans, LA - R&D - [lightwave.io](http://lightwave.io) ###
+### Lightwave, New Orleans, LA - R&D - [lightwave.io](http://lightwave.io)
+
 **Lead Hardware Engineer** - February 2013 to September 2013
 
-- Designed and assembled SMT PCBs for the first three iterations of a wireless wearable sensor device
+- Designed and assembled SMT PCBs for the first three iterations of a **Bluetooth LE** wearable sensor device
 - Researched and selected all components used in the device, including MCUs, radios, and MEMS sensors
 - Generated and 3D printed CAD models of electronics enclosures for wearable testing of devices
-- Directed two hardware interns to design and build devices for sensor and LED interaction tests
 
-### Newell Rubbermaid, Oak Brook, IL - Sharpie, Paper Mate, & Prismacolor R&D ###
+### Newell Rubbermaid, Oak Brook, IL - Sharpie, Paper Mate, & Prismacolor R&D
+
 **Product Engineering Co-op** - 48 weeks: Summer/Fall 2010, Summer 2011, Winter 2012
 
 - Modeled complete Paper Mate product in CAD in two weeks to meet deadline for production tooling
@@ -44,20 +67,8 @@ Mechatronics engineer with a creative mind and a love of making. Shaping the fut
 
 - - -
 
-## Technical Skills ##
+## Education
 
-### Electronics design ###
-- Programmed embedded systems using **ARM Cortex M3**, **AVR MCUs**, and **TI 8051 SoCs** in **C and C++**
-- Designed and built up to four-layer PCBs for both mixed SMT and thru-hole and **completely SMT** components, designed systems with **2.4GHz RF**
-
-### 3D design ###
-- Engineered consumer products in **Pro/Engineer** and personal robotics projects in **SolidWorks**
-- 3D printed on Objet resin printer and MakerBot ABS FDM printer for functional and looks-like testing
-- Generated CNC toolpaths from SolidWorks models for artistic electronic consumer goods
-
-- - -
-
-## Education ##
 **Northwestern University, Evanston, IL**
 
 - Bachelor of Science in Mechanical Engineering with Co-op Certificate - **GPA: 3.84, Magna Cum Laude**
