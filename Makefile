@@ -1,15 +1,15 @@
 # makefile for generating html and pdfs of the markdown formatted resume and also for publishing those files to github pages
 
-PYTHON_VERSION = 2.7.9
-VIRTUAL_ENV_NAME = resume-$(PYTHON_VERSION)
-BREW_DEPS = pyenv pyenv-virtualenv cairo pango gdk-pixbuf libxml2 libxslt libffi watchman
-WEASY_OPTS =
+PYTHON_VERSION := 2.7.9
+VIRTUAL_ENV_NAME := resume-$(PYTHON_VERSION)
+BREW_DEPS := pyenv pyenv-virtualenv cairo pango gdk-pixbuf libxml2 libxslt libffi watchman
+WEASY_OPTS :=
 
-SRC_FILES = resume.md resume.css
-BUILD_FILES = index.html cousins.pdf
-PUBLISH_FILES = CNAME resume.css $(BUILD_FILES)
+SRC_FILES := resume.md resume.css
+BUILD_FILES := index.html cousins.pdf
+PUBLISH_FILES := CNAME resume.css $(BUILD_FILES)
 
-GH_REPO = mcous/resume
+REPO_ADDRESS := $(shell git config --local remote.origin.url)
 
 all: cousins.pdf
 
@@ -36,7 +36,6 @@ watch:
 unwatch:
 	watchman watch-del $(shell pwd)
 
-ghRepo = $(shell git config --local remote.origin.url)
 publish: cousins.pdf
 	mkdir publish
 	cp $(PUBLISH_FILES) publish
@@ -44,14 +43,14 @@ publish: cousins.pdf
 	git init && \
 	git add --all && \
 	git commit -m "deploy $(shell date '+%Y/%m/%d %H:%M:%S %Z')" && \
-	git push $(ghRepo) master:gh-pages --force && \
+	git push $(REPO_ADDRESS) master:gh-pages --force && \
 	cd .. && \
 	rm -rf publish
 
-cousins.pdf: index.html resume.css
+cousins.pdf: index.html
 	weasyprint index.html cousins.pdf
 
-index.html: resume.md
+index.html: resume.md resume.css
 	echo '<!DOCTYPE html><html><head><link href="resume.css" rel="stylesheet"></head><body>' > index.html
 	markdown resume.md >> index.html
 	echo '</body></html>' >> index.html
