@@ -15,7 +15,7 @@
     "ci:gitconfig:email": "git config --global user.email 'mike@cousins.io'",
     "ci:gitconfig": "npm run ci:gitconfig:name && npm run ci:gitconfig:email",
     "ci:ghpages": "gh-pages -x -r https://$GH_TOKEN@github.com/mcous/resume.git -d public -m \"$(date)\"",
-    "ci:deploy": "npm run build && npm run ci:ghpages",
+    "ci:deploy": "xvfb-maybe npm run build && npm run ci:ghpages",
     "preci:deploy": "npm run ci:gitconfig",
     "ci": "xvfb-maybe npm test",
     "ci:after": "node lib/test-results.js mike@cousins.io $TRAVIS_BUILD_NUMBER $TRAVIS_TEST_RESULT"
