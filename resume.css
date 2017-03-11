@@ -213,7 +213,7 @@ li li {
   }
 }
 
-@media (min-device-width: 768px) {
+@media print, (min-device-width: 768px) {
   body {
     width: 38.25rem;
     margin: 0 auto;
