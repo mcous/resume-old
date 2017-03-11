@@ -5,7 +5,7 @@
 
 > A selection of Mike Cousins' (at least somewhat) impressive accomplishments and skills
 
-<http://mike.cousins.io/resume>
+<http://mike.cousins.io/resume/>
 
 This is where I keep my resume, because I will version control any aspect of my life that I can. It's written in Markdown, because I will write Markdown for any aspect of my life that I can. The Markdown is compiled to HTML, combined with some CSS, and converted to PDF for convenient consumption.
 
@@ -13,8 +13,7 @@ This is where I keep my resume, because I will version control any aspect of my 
 
 - [resume.md](./resume.md) - the resume
 - [resume.css](./resume.css) - the style
-- [static]('./static') - static files like images
-- [lib]('./lib') - artisinal, handcrafted development and build libraries
+- [lib](./lib) - artisinal, handcrafted development and build libraries
 
 ## deploy
 
@@ -48,13 +47,17 @@ Mad props to the stuff that makes it all possible:
 - [hummus](https://github.com/galkahana/HummusJS): Create, read and modify PDF files and streams
 - [inject-lr-script](https://github.com/mattdesl/inject-lr-script): inject live reload into HTML content
 - [marked](https://github.com/chjj/marked): A markdown parser built for speed
+- [nodemailer](https://github.com/nodemailer/nodemailer): Easy as cake e-mail sending from your Node.js applications
 - [nodemon](https://github.com/remy/nodemon): Simple monitor script for use during development of a node.js app.
 - [octicons](https://github.com/primer/octicons): A scalable set of icons handcrafted with <3 by GitHub.
 - [pdf2json](https://github.com/modesty/pdf2json): A PDF file parser that converts PDF binaries to text based JSON, powered by porting a fork of PDF.JS to Node.js
+- [rimraf](https://github.com/isaacs/rimraf): A deep deletion module for node (like `rm -rf`)
 - [run-parallel](https://github.com/feross/run-parallel): Run an array of functions in parallel
+- [run-series](https://github.com/feross/run-series): Run an array of functions in series
 - [run-waterfall](https://github.com/feross/run-waterfall): Run an array of functions in series, each passing its results to the next function (waterfall)
 - [standard](https://github.com/feross/standard): JavaScript Standard Style
 - [tiny-lr](https://github.com/mklabs/tiny-lr): Tiny LiveReload server, background-friendly
+- [xvfb-maybe](https://github.com/paulcbetts/xvfb-maybe): Runs xvfb-run only if you need to, useful for Electron unit tests
 
 ## license
 
