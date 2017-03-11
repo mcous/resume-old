@@ -1,4 +1,3 @@
-.python-version
-*.html
-*.pdf
-publish
+node_modules
+public
+.test-output

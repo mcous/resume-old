@@ -1,0 +1,69 @@
+{
+  "name": "resume",
+  "title": "Mike Cousins' Resume",
+  "version": "0.0.0",
+  "description": "A selection of Mike Cousins' (at least somewhat) impressive accomplishments and skills",
+  "scripts": {
+    "lint": "standard lib/*.js",
+    "deps": "node lib/print-deps.js",
+    "test": "node lib/test.js resume.md resume.css",
+    "start": "nodemon -w lib lib/server.js resume.md resume.css mike-cousins.pdf",
+    "build": "node lib/build.js resume.md resume.css mike-cousins.pdf public",
+    "postbuild": "node lib/add-pdf-metadata.js public/mike-cousins.pdf",
+    "prebuild": "rm -rf public && mkdir public && cp resume.css public",
+    "ci:gitconfig:name": "git config --global user.name 'Mike Cousins'",
+    "ci:gitconfig:email": "git config --global user.email 'mike@cousins.io'",
+    "ci:gitconfig": "npm run ci:gitconfig:name && npm run ci:gitconfig:email",
+    "ci:ghpages": "gh-pages -x -r https://$GH_TOKEN@github.com/mcous/resume.git -d public -m \"$(date)\"",
+    "ci:deploy": "xvfb-maybe npm run build && npm run ci:ghpages",
+    "preci:deploy": "npm run ci:gitconfig",
+    "ci": "xvfb-maybe npm test",
+    "ci:after": "node lib/test-results.js mike@cousins.io $TRAVIS_BUILD_NUMBER $TRAVIS_TEST_RESULT"
+  },
+  "config": {
+    "server": {
+      "host": "localhost",
+      "port": 8080
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mcous/resume.git"
+  },
+  "private": true,
+  "author": {
+    "name": "Mike Cousins",
+    "email": "mike@cousins.io",
+    "url": "http://mike.cousins.io"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mcous/resume/issues"
+  },
+  "homepage": "http://mike.cousins.io/resume",
+  "devDependencies": {
+    "body-parser": "^1.17.1",
+    "create-html": "^1.1.0",
+    "electron": "^1.6.2",
+    "electron-html-to": "^2.5.0",
+    "end-or-error": "^1.0.1",
+    "escape-html": "^1.0.3",
+    "express": "^4.15.2",
+    "gh-pages": "^0.12.0",
+    "github-url-from-git": "^1.5.0",
+    "hummus": "^1.0.75",
+    "inject-lr-script": "^2.1.0",
+    "marked": "^0.3.5",
+    "nodemailer": "^3.1.5",
+    "nodemon": "^1.11.0",
+    "octicons": "^5.0.1",
+    "pdf2json": "^1.1.7",
+    "rimraf": "^2.6.1",
+    "run-parallel": "^1.1.6",
+    "run-series": "^1.1.4",
+    "run-waterfall": "^1.1.3",
+    "standard": "^9.0.1",
+    "tiny-lr": "^1.0.3",
+    "xvfb-maybe": "^0.1.3"
+  }
+}

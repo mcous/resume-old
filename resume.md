@@ -1,75 +1,61 @@
-# Mike J. Cousins <small>_<mike@cousins.io>  -  [cousins.io](http://cousins.io)  -  [github.com/mcous](http://github.com/mcous)_</small>
+# mike cousins
 
-- - -
+/[a-z]+ware/ engineer
 
-## Profile
+> Brooklyn, NY | <mike@cousins.io> | <a href='http://mike.cousins.io' target='_blank'>http://mike.cousins.io</a> | <a href='https://github.com/mcous' target='_blank'>@mcous</a>
 
-Hardware / firmware / software engineer with a creative mind and a love of making. Shaping the future of how we interact with technology.
+## work
 
-- - -
+### Keen Home
 
-## Technical Skills
+> Connected home startup | New York, NY | <a href='https://keenhome.io' target='_blank'>https://keenhome.io</a>
 
-### Development and Electronics
+- *Senior product engineer*
+  - *July 2015 to present*  
+- *Mechatronics engineer*
+  - *November 2014 to July 2015*
 
-- Programmed systems using **SiLabs ZigBee SoCs**, **8-bit AVR MCUs**, and **TI BTLE SoCs** in **C and C++**
-- Developed test equipment software in **Scala** with **Websocket-based HTML5 GUI**
-- Published [**npm**](https://www.npmjs.com/~mcous) modules for PCB rendering in **JavaScipt** and **CoffeeScript**
-- Designed and built up to four-layer PCBs for both mixed SMT and thru-hole and **completely SMT** components
 
-### 3D design
+- Helped build Keen Home's API using **Scala**, **Elasticsearch**, **RabbitMQ**, **Redis**, **Docker**, and **AWS**
+- Built and maintained **Node.js**-based API **integration tests**, admin tools, and schedule systems
+- Wrote and shipped production <a href='https://keenhome.io/smart-vent' target='_blank'>Smart Vent</a> firmware in **C** with the SiLabs Ember **ZigBee** stack
+- Created factory software in **Scala** and **Node.js** / **Electron** with **React** and **Redux** frontends
 
-- Engineered consumer products and personal projects in **Pro/Engineer** and **SolidWorks**
-- 3D printed on Objet resin printers and MakerBot ABS FDM printers for functional and looks-like testing
+### tracespace
 
-- - -
+> Open-source organization | <a href='https://github.com/tracespace' target='_blank'>https://github.com/tracespace</a>
 
-## Work Experience
+- *Creator and main contributor*
+  - *July 2014 to present*
 
-### Keen Home, New York, NY - [keenhome.io](http://keenhome.io)
 
-**Senior Product Engineer** - July 2015 to present
+- Published **Node.js** **Stream**-based **JavaScript** PCB to **SVG** <a href='https://www.npmjs.com/search?q=maintainer:mcous%20keywords:pcb' target='_blank'>visualization libraries</a> to **npm**
+- Launched a free client-side <a href='http://viewer.tracespace.io' target='_blank'>PCB viewer webapp</a> built with **Deku**, **Redux**, and **Web Workers**
 
-- Shipped production Smart Vent Firmware
-- Developed software for assembly-line test fixtures
-- Managing embedded development and working closely with software team for Smart Bridge integration
+### Wiley Cousins
 
-**Mechatronics Engineer** - November 2014 to July 2015
+> Software and hardware development shop | New Orleans, LA
 
-- Rewrote Smart Vent firmware for reliability and maintainability
-- Tested Smart Vent prototypes for mechanical, electrical, and firmware functionality
-- Created prototype hardware and software for platform integration of Smart Vent product
-- Designed and printed prototype 3D parts for Smart Vent development
+- *Co-founder and hardware engineer*
+  - *October 2013 to October 2014*
 
-### Wiley Cousins, New Orleans, LA - [wileycousins.com](http://wileycousins.com)
 
-**Co-founder and Hardware Engineer** - October 2013 to October 2014
+- Designed CAD (**SolidWorks** and **KiCad**) and firmware (**AVR 8-bit**) for the <a href='https://github.com/wileycousins/clockblock' target='_blank'>clockblock LED clock</a>
+- Taught 12 week hands-on circuits class taking students from no experience up to digital logic
 
-- clockblock ([github.com/wileycousins/clockblock](https://github.com/wileycousins/clockblock))
-  - Built complete electronics package for product, including component selection, PCB, and firmware
-  - Created CAD assembly in SolidWorks for fit testing and CNC machining
-- Taught hands-on twelve week circuits class bringing ten students to an understanding of digital logic
+## libraries, tools, and skills
 
-### Lightwave, New Orleans, LA - R&D - [lightwave.io](http://lightwave.io)
+- **JavaScript** - Node.js (and built-in libraries), npm, Mocha, Zuul, testdouble.js, Lodash, Bluebird
+- **Frontend web** - Redux, React, bundlers, Web Workers, WebSockets, SVG, Sketch, Tachyons
+- **Backend web** - Elasticsearch, RabbitMQ, Redis, AWS (EC2, Lambda, S3), Docker, NGINX
+- **Hardware** - Embedded C, AVR 8-bit, ARM Cortex, ZigBee, KiCad, PCB assembly, SolidWorks
+- **Scala** - Akka, Spray, Jackson, Elastic4s, sbt
 
-**Lead Hardware Engineer** - February 2013 to September 2013
 
-- Designed and assembled SMT PCBs for the first three iterations of a **Bluetooth LE** wearable sensor device
-- Researched and selected all components used in the device, including MCUs, radios, and MEMS sensors
-- Generated and 3D printed CAD models of electronics enclosures for wearable testing of devices
+## education
 
-### Newell Rubbermaid, Oak Brook, IL - Sharpie, Paper Mate, & Prismacolor R&D
+### Northwestern University
 
-**Product Engineering Co-op** - 48 weeks: Summer/Fall 2010, Summer 2011, Winter 2012
+> McCormick School of Engineering  | Evanston, IL
 
-- Modeled complete Paper Mate product in CAD in two weeks to meet deadline for production tooling
-- Prototyped products on an Objet 3D printer for visual and functional testing
-
-- - -
-
-## Education
-
-**Northwestern University, Evanston, IL**
-
-- Bachelor of Science in Mechanical Engineering with Co-op Certificate - **GPA: 3.84, Magna Cum Laude**
-- Courses: Machine Element Design, Manufacturing Processes, Data and Algorithms, Adv. Mechatronics, Machine Perception of Audio, Robotics Design Competition
+- *Bachelor of Science in Mechanical Engineering (concentrating in intelligent mechanical systems)*
