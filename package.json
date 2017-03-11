@@ -17,7 +17,8 @@
     "ci:ghpages": "gh-pages -x -r https://$GH_TOKEN@github.com/mcous/resume.git -d public -m \"$(date)\"",
     "ci:deploy": "npm run build && npm run ci:ghpages",
     "preci:deploy": "npm run ci:gitconfig",
-    "ci": "xvfb-maybe npm test"
+    "ci": "xvfb-maybe npm test",
+    "ci:failure": "node lib/test-results.js mike@cousins.io $TRAVIS_BUILD_NUMBER"
   },
   "config": {
     "server": {
@@ -53,10 +54,13 @@
     "hummus": "^1.0.75",
     "inject-lr-script": "^2.1.0",
     "marked": "^0.3.5",
+    "nodemailer": "^3.1.5",
     "nodemon": "^1.11.0",
     "octicons": "^5.0.1",
     "pdf2json": "^1.1.7",
+    "rimraf": "^2.6.1",
     "run-parallel": "^1.1.6",
+    "run-series": "^1.1.4",
     "run-waterfall": "^1.1.3",
     "standard": "^9.0.1",
     "tiny-lr": "^1.0.3",
