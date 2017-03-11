@@ -10,7 +10,7 @@
     "start": "nodemon -w lib lib/server.js resume.md resume.css mike-cousins.pdf",
     "build": "node lib/build.js resume.md resume.css mike-cousins.pdf public",
     "postbuild": "node lib/add-pdf-metadata.js public/mike-cousins.pdf",
-    "prebuild": "rm -rf public && mkdir public && cp static/* resume.css public",
+    "prebuild": "rm -rf public && mkdir public && cp resume.css public",
     "ci:gitconfig:name": "git config --global user.name 'Mike Cousins'",
     "ci:gitconfig:email": "git config --global user.email 'mike@cousins.io'",
     "ci:gitconfig": "npm run ci:gitconfig:name && npm run ci:gitconfig:email",
@@ -18,7 +18,7 @@
     "ci:deploy": "npm run build && npm run ci:ghpages",
     "preci:deploy": "npm run ci:gitconfig",
     "ci": "xvfb-maybe npm test",
-    "ci:failure": "node lib/test-results.js mike@cousins.io $TRAVIS_BUILD_NUMBER"
+    "ci:after": "node lib/test-results.js mike@cousins.io $TRAVIS_BUILD_NUMBER $TRAVIS_TEST_RESULT"
   },
   "config": {
     "server": {
