@@ -1,0 +1,15 @@
+sudo: false
+language: node_js
+node_js:
+- '6'
+script: npm run ci
+deploy:
+  provider: script
+  script: npm run ci:deploy
+  on:
+    repo: mcous/resume
+    tags: true
+    all_branches: true
+env:
+  global:
+    secure: Dcz6LUF0rNHcXwgV2IdhmCC2k8gaE62ZqE9Cm19CmBFZUpdy8gMqwx/KG+cWGuNUPwNttdtXeknQE5kR9ZX6i4Ix4BPIiM4Fk2B7Xs+JVnMVelPo/JSmiBvBvGXGcdGfNChC55kVGFfuELOJcM3ZqDkTpqu8two/mEdqpe7/DvU=

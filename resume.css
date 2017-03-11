@@ -1,82 +1,248 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700');
+
 @page {
   size: 8.5in 11in;
   margin: 0;
 }
 
+html {
+  width: 100%;
+  margin: 0;
+  font-size: 20px;
+  background-color: #555;
+  color: #333;
+}
+
+@media print {
+  html {
+    font-size: 16pt;
+    background-color: #fff;
+  }
+
+  .screen-only { display: none; }
+}
+
+.dib { display: inline-block; }
+.absolute { position: absolute; }
+.fr { float: right; }
+.fl { float: left; }
+.top-1 { top: 1rem; }
+.right-1 { right: 1rem; }
+.w1 { width: 1rem; }
+.w-100 { width: 100%; }
+.h-auto { height: auto; }
+.ml2 { margin-left: 0.5rem; }
+.mt3 { margin-top: 1rem; }
+.mr3 { margin-right: 1rem; }
+
 * {
-  font-family: helvetica, arial, sans-serif;
-  line-height: 1.2;
-}
-
-h1, h2, h3, h4 {
-  font-family: helvetica, arial, sans-serif;
-}
-
-small {
-  float: right
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  padding: 0;
-  margin: 0.75in;
-}
-
-h1 {
-  font-weight: bold;
-  font-size: 18pt;
-  margin-top: 0;
-  margin-bottom: 4pt;
+  position: relative;
+  padding-bottom: 2.25rem;
+  width: 100%;
+  background-color: #fff;
+  font-family: 'Open Sans';
 }
 
 em {
-  font-size: 12pt;
-}
-
-p {
-  margin: 0;
-  font-size: 11pt;
-}
-
-a:link {
-  color: black;
-  text-decoration: none;
-}
-
-a:visited {
-  color: black;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-h2 {
-  font-weight: bold;
-  font-size: 14pt;
-  margin-top: 0;
-  margin-bottom: 4pt;
-}
-
-h3 {
-  font-weight: bold;
-  font-size: 12pt;
-  margin-top: 4pt;
-  margin-bottom: 2pt;
-}
-
-ul {
-  list-style-type: square;
-  font-size: 10pt;
-  padding-left: 1em;
-  margin-top: 0;
-  margin-bottom: 0pt;
+  font-style: normal;
+  font-weight: 300;
 }
 
 strong {
-  font-weight: bold;
+  font-weight: 700;
 }
 
-hr {
-  margin-top: 6pt;
-  margin-bottom: 6pt;
+h1, h2, h3, blockquote, ul {
+  font-weight: 400;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+a {
+  color: #00449E;
+  text-decoration: none;
+  /*hyphens: none;*/
+}
+
+p, li {
+  /*hyphens: auto;*/
+  line-height: 1.5;
+}
+
+p {
+  padding-left: 1rem;
+}
+
+h1 {
+  line-height: 1;
+  font-size: 2.25rem;
+  padding-top: 1.6875rem;
+  padding-bottom: 0.5rem;
+  background-color: #eee !important;
+  -webkit-print-color-adjust: exact;
+}
+
+h1 + p,
+h1 + p + blockquote {
+  padding-bottom: 1rem;
+  background-color: #eee !important;
+  -webkit-print-color-adjust: exact;
+}
+
+h1 + p {
+  padding-top: 0;
+}
+
+h2 {
+  clear: both;
+  line-height: 1;
+  font-size: 1.25rem;
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+h3 {
+  line-height: 1.25;
+  font-size: 1rem;
+  padding-bottom: 0.125rem;
+}
+
+h4,
+h5,
+h6 {
+  line-height: 1.25;
+}
+
+p {
+  font-size: 0.75rem;
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem;
+}
+
+P:last-child {
+  padding-bottom: 0;
+}
+
+blockquote > p {
+  float: none;
+  padding: 0;
+}
+
+blockquote + ul {
+  float: none;
+  padding: 0.125rem 0 0 0;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  border-top: solid #777 0.0625rem;
+}
+
+h3 + blockquote {
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem;
+}
+
+blockquote + * {
+  clear: both;
+}
+
+ul {
+  clear: both;
+  padding-top: 0.25rem;
+  padding-bottom: 1rem;
+  list-style: none;
+}
+
+li {
+  position: relative;
+  padding-left: 0.375rem;
+  font-size: 0.75rem;
+  overflow: hidden;
+}
+
+li::before {
+  position: absolute;
+  left: 0;
+  content: '•';
+}
+
+h2 + ul {
+  padding-top: 0;
+}
+
+blockquote + ul > li,
+h2 + ul > li {
+  padding-left: 0;
+}
+
+h2 + ul > li {
+  padding-bottom: 0.25rem;
+}
+
+h2 + ul > li:last-child {
+  padding-bottom: 0;
+}
+
+h2 + ul > li::before,
+blockquote + ul > li::before,
+li li::before {
+  content: ''
+}
+
+li > ul {
+  padding-bottom: 0;
+}
+
+li li {
+  font-size: 0.625rem;
+}
+
+@media (min-device-width: 500px) {
+  li > ul {
+    float: right;
+    padding: 0;
+  }
+
+  li li {
+    font-size: inherit;
+  }
+}
+
+@media (min-device-width: 768px) {
+  body {
+    width: 38.25rem;
+    margin: 0 auto;
+  }
+
+  h1,
+  h2,
+  h3,
+  p,
+  blockquote,
+  ul {
+    padding-left: 2.25rem;
+    padding-right: 2.25rem;
+  }
+
+  blockquote + ul {
+    margin-left: 2.25rem;
+    margin-right: 2.25rem;
+  }
+
+  h3, p {
+    float: left;
+    padding-right: 0;
+  }
+
+  blockquote {
+    clear: none;
+    overflow: hidden;
+    text-align: right;
+    padding-left: 0;
+  }
 }
