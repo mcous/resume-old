@@ -11,7 +11,7 @@
 > Connected home startup | New York, NY | <a href='https://keenhome.io' target='_blank'>https://keenhome.io</a>
 
 - *Senior product engineer*
-  - *July 2015 to present*  
+  - *July 2015 to present*
 - *Mechatronics engineer*
   - *November 2014 to July 2015*
 
