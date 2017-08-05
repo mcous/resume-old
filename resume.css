@@ -203,7 +203,7 @@ li li {
   }
 }
 
-@media (min-device-width: 768px) {
+@media print, (min-device-width: 768px) {
   body {
     width: 38.25rem;
     margin: 0 auto;
@@ -245,7 +245,6 @@ li li {
 
   body {
     width: 40.8rem;
-    margin: 0 auto;
   }
 
   h1,
