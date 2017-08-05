@@ -13,15 +13,6 @@ html {
   color: #333;
 }
 
-@media print {
-  html {
-    font-size: 16pt;
-    background-color: #fff;
-  }
-
-  .screen-only { display: none; }
-}
-
 .dib { display: inline-block; }
 .absolute { position: absolute; }
 .fr { float: right; }
@@ -67,11 +58,9 @@ h1, h2, h3, blockquote, ul {
 a {
   color: #00449E;
   text-decoration: none;
-  /*hyphens: none;*/
 }
 
 p, li {
-  /*hyphens: auto;*/
   line-height: 1.5;
 }
 
@@ -81,7 +70,7 @@ p {
 
 h1 {
   line-height: 1;
-  font-size: 2.25rem;
+  font-size: 2rem;
   padding-top: 1.6875rem;
   padding-bottom: 0.5rem;
   background-color: #eee !important;
@@ -103,7 +92,7 @@ h2 {
   clear: both;
   line-height: 1;
   font-size: 1.25rem;
-  padding-top: 1rem;
+  margin-top: 1rem;
   padding-bottom: 0.5rem;
 }
 
@@ -139,6 +128,7 @@ blockquote + ul {
   padding: 0.125rem 0 0 0;
   margin-left: 1rem;
   margin-right: 1rem;
+  margin-bottom: 0;
   border-top: solid #777 0.0625rem;
 }
 
@@ -154,7 +144,7 @@ blockquote + * {
 ul {
   clear: both;
   padding-top: 0.25rem;
-  padding-bottom: 1rem;
+  margin-bottom: 1rem;
   list-style: none;
 }
 
@@ -195,7 +185,7 @@ li li::before {
 }
 
 li > ul {
-  padding-bottom: 0;
+  margin-bottom: 0;
 }
 
 li li {
@@ -213,7 +203,7 @@ li li {
   }
 }
 
-@media print, (min-device-width: 768px) {
+@media (min-device-width: 768px) {
   body {
     width: 38.25rem;
     margin: 0 auto;
@@ -245,4 +235,33 @@ li li {
     text-align: right;
     padding-left: 0;
   }
+}
+
+@media print {
+  html {
+    font-size: 15pt;
+    background-color: #fff;
+  }
+
+  body {
+    width: 40.8rem;
+    margin: 0 auto;
+  }
+
+  h1,
+  h2,
+  h3,
+  p,
+  blockquote,
+  ul {
+    padding-left: 2.4rem;
+    padding-right: 2.4rem;
+  }
+
+  blockquote + ul {
+    margin-left: 2.4rem;
+    margin-right: 2.4rem;
+  }
+
+  .screen-only { display: none; }
 }
