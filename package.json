@@ -1,7 +1,7 @@
 {
   "name": "resume",
   "title": "Mike Cousins' Resume",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A selection of Mike Cousins' (at least somewhat) impressive accomplishments and skills",
   "scripts": {
     "lint": "standard lib/*.js",
