@@ -11,12 +11,12 @@ people think, "Hey, that's pretty cool."
 I use (or have used) the following tools and techniques, and will happily talk
 about any of them:
 
-- **Lanuguages** - TypeScript/JavaScript, Python, Scala, embedded C/C++
+- **Languages** - TypeScript/JavaScript, Python, Scala, embedded C/C++
 - **Testing** - Test-driven development, effective mocking, GitHub Actions, API
   integration tests
 - **Front-end** - [React], React Hooks, [Redux], bundlers, Web Workers,
   WebSockets, SVG
-- **Back-end** - [FastAPI], [Asyncio], Elasticsearch, Redis, AWS, Docker, NGINX
+- **Back-end** - [FastAPI], [asyncio], Elasticsearch, Redis, AWS, Docker, NGINX
 - **Hardware** - AVR 8-bit, ARM Cortex, ZigBee, KiCad, PCB assembly, SolidWorks
 
 [react]: https://reactjs.org/
