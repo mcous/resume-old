@@ -39,20 +39,16 @@ HTML, CSS, and PDF to GitHub pages:
 
 Mad props to the stuff that makes it all possible:
 
-- [body-parser](https://github.com/expressjs/body-parser): Node.js body parsing
+- [body-parser](https://npmjs.org/package/body-parser): Node.js body parsing
   middleware
-- [create-html](https://github.com/sethvincent/create-html): create an html file
-  with one function call
-- [electron](https://github.com/electron-userland/electron-prebuilt): Install
-  prebuilt electron binaries for the command-line using npm
-- [electron-html-to](https://github.com/bjrmatos/electron-html-to): Convert html
-  to html/image using electron
+- [create-html](https://github.com/sethvincent/create-html): create the content
+  of an html file with one function call
 - [end-or-error](https://github.com/stream-utils/end-or-error): Listen readable
   stream `end` or `error` event once
-- [escape-html](https://github.com/component/escape-html): Escape string for use
-  in HTML
-- [express](https://github.com/expressjs/express): Fast, unopinionated,
-  minimalist web framework
+- [escape-html](https://npmjs.org/package/escape-html): Escape string for use in
+  HTML
+- [express](https://npmjs.org/package/express): Fast, unopinionated, minimalist
+  web framework
 - [gh-pages](https://github.com/tschaub/gh-pages): Publish to a gh-pages branch
   on GitHub (or any other branch on any other remote)
 - [github-url-from-git](https://github.com/visionmedia/node-github-url-from-git):
@@ -61,17 +57,21 @@ Mad props to the stuff that makes it all possible:
   files and streams
 - [inject-lr-script](https://github.com/mattdesl/inject-lr-script): inject live
   reload into HTML content
-- [marked](https://github.com/chjj/marked): A markdown parser built for speed
+- [marked](https://npmjs.org/package/marked): A markdown parser built for speed
 - [nodemailer](https://github.com/nodemailer/nodemailer): Easy as cake e-mail
   sending from your Node.js applications
 - [nodemon](https://github.com/remy/nodemon): Simple monitor script for use
   during development of a node.js app.
-- [octicons](https://github.com/primer/octicons): A scalable set of icons
+- [octicons](https://npmjs.org/package/octicons): A scalable set of icons
   handcrafted with <3 by GitHub.
 - [pdf2json](https://github.com/modesty/pdf2json): A PDF file parser that
   converts PDF binaries to text based JSON, powered by porting a fork of PDF.JS
   to Node.js
-- [rimraf](https://github.com/isaacs/rimraf): A deep deletion module for node
+- [prettier](https://npmjs.org/package/prettier): Prettier is an opinionated
+  code formatter
+- [puppeteer](https://npmjs.org/package/puppeteer): A high-level API to control
+  headless Chrome over the DevTools Protocol
+- [rimraf](https://npmjs.org/package/rimraf): A deep deletion module for node
   (like `rm -rf`)
 - [run-parallel](https://github.com/feross/run-parallel): Run an array of
   functions in parallel
@@ -82,8 +82,6 @@ Mad props to the stuff that makes it all possible:
 - [standard](https://github.com/feross/standard): JavaScript Standard Style
 - [tiny-lr](https://github.com/mklabs/tiny-lr): Tiny LiveReload server,
   background-friendly
-- [xvfb-maybe](https://github.com/paulcbetts/xvfb-maybe): Runs xvfb-run only if
-  you need to, useful for Electron unit tests
 
 ## license
 

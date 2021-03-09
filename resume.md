@@ -81,13 +81,13 @@ about any of them:
 
 - Published [PCB visualization libraries] to **npm**, written in JavaScript and
   **TypeScript**
-- Launched an open-source [Gerber viewer] built with **React**, used by various
-  [PCB manufacturers]
+- Launched [tracespace view], an open-source Gerber viewer built with **React**,
+  used by various [PCB manufacturers]
 
 [github.com/tracespace]: https://github.com/tracespace
 [pcb visualization libraries]:
   https://www.npmjs.com/search?q=maintainer:mcous%20keywords:pcb
-[gerber viewer]: https://tracespace.io/view/
+[tracespace view]: https://tracespace.io/view/
 [pcb manufacturers]: https://www.pcbway.com/project/OnlineGerberViewer.html
 
 ## Wiley Cousins
