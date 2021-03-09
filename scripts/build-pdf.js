@@ -1,14 +1,12 @@
 // compile the HTML build to PDF
 'use strict'
 
-const path = require('path')
 const { read: readFile } = require('to-vfile')
 const puppeteer = require('puppeteer')
 const hummus = require('hummus')
 
 function buildPdf(htmlFile, buildParams) {
-  const { cssSource, outputDir, pdfOutputName, pdfRenderDelay } = buildParams
-  const pdfOutputPath = path.join(outputDir, pdfOutputName)
+  const { cssSource, pdfOutputPath, pdfRenderDelay } = buildParams
 
   let _browser
   let _page
@@ -37,7 +35,7 @@ function buildPdf(htmlFile, buildParams) {
 
       writer.end()
     })
-    .then(() => readFile(path.join(outputDir, pdfOutputName)))
+    .then(() => readFile(pdfOutputPath))
 }
 
 module.exports = { buildPdf }
