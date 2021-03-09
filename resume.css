@@ -13,18 +13,42 @@ html {
   color: #333;
 }
 
-.dib { display: inline-block; }
-.absolute { position: absolute; }
-.fr { float: right; }
-.fl { float: left; }
-.top-1 { top: 1rem; }
-.right-1 { right: 1rem; }
-.w1 { width: 1rem; }
-.w-100 { width: 100%; }
-.h-auto { height: auto; }
-.ml2 { margin-left: 0.5rem; }
-.mt3 { margin-top: 1rem; }
-.mr3 { margin-right: 1rem; }
+.dib {
+  display: inline-block;
+}
+.absolute {
+  position: absolute;
+}
+.fr {
+  float: right;
+}
+.fl {
+  float: left;
+}
+.top-1 {
+  top: 1rem;
+}
+.right-1 {
+  right: 1rem;
+}
+.w1 {
+  width: 1rem;
+}
+.w-100 {
+  width: 100%;
+}
+.h-auto {
+  height: auto;
+}
+.ml2 {
+  margin-left: 0.5rem;
+}
+.mt3 {
+  margin-top: 1rem;
+}
+.mr3 {
+  margin-right: 1rem;
+}
 
 * {
   margin: 0;
@@ -34,88 +58,81 @@ html {
 
 body {
   position: relative;
-  padding-bottom: 2.25rem;
+  padding-bottom: 1.6875rem;
   width: 100%;
   background-color: #fff;
   font-family: 'Open Sans';
-}
-
-em {
-  font-style: normal;
-  font-weight: 300;
+  line-height: 1.5;
 }
 
 strong {
   font-weight: 700;
 }
 
-h1, h2, h3, blockquote, ul {
+h1,
+h2 {
+  line-height: 1.25;
   font-weight: 400;
-  padding-left: 1rem;
-  padding-right: 1rem;
+}
+
+p,
+ul,
+table {
+  margin: 0.5rem 1rem;
+}
+
+table {
+  font-style: normal;
+  font-weight: 300;
+}
+
+blockquote > p {
+  margin: 0;
 }
 
 a {
-  color: #00449E;
+  color: #00449e;
   text-decoration: none;
 }
 
-p, li {
-  line-height: 1.5;
-}
-
-p {
-  padding-left: 1rem;
+h1,
+h1 + p,
+h1 + p + blockquote {
+  margin: 0;
+  padding: 0 1rem 0.5rem 1rem;
+  background-color: #eee !important;
+  -webkit-print-color-adjust: exact;
 }
 
 h1 {
-  line-height: 1;
   font-size: 2rem;
   padding-top: 1.6875rem;
-  padding-bottom: 0.5rem;
-  background-color: #eee !important;
-  -webkit-print-color-adjust: exact;
 }
 
-h1 + p,
 h1 + p + blockquote {
+  float: none;
   padding-bottom: 1rem;
-  background-color: #eee !important;
-  -webkit-print-color-adjust: exact;
-}
-
-h1 + p {
-  padding-top: 0;
+  margin-bottom: 1rem;
 }
 
 h2 {
   clear: both;
-  line-height: 1;
-  font-size: 1.25rem;
-  margin-top: 1rem;
-  padding-bottom: 0.5rem;
-}
-
-h3 {
-  line-height: 1.25;
   font-size: 1rem;
-  padding-bottom: 0.125rem;
+  margin-left: 1rem;
+  margin-top: 2rem;
 }
 
-h4,
-h5,
-h6 {
-  line-height: 1.25;
+blockquote {
+  margin-top: 0.5rem;
+}
+
+blockquote {
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 p {
   font-size: 0.75rem;
-  padding-top: 0.125rem;
-  padding-bottom: 0.125rem;
-}
-
-P:last-child {
-  padding-bottom: 0;
 }
 
 blockquote > p {
@@ -123,16 +140,27 @@ blockquote > p {
   padding: 0;
 }
 
-blockquote + ul {
+table {
   float: none;
-  padding: 0.125rem 0 0 0;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  margin-bottom: 0;
+  width: calc(100% - 2rem);
+  padding: 0.125rem 0 0;
   border-top: solid #777 0.0625rem;
+  font-size: 0.75rem;
 }
 
-h3 + blockquote {
+td {
+  width: 50%;
+}
+
+td:nth-of-type(2) {
+  text-align: right;
+}
+
+thead {
+  display: none;
+}
+
+h2 + blockquote {
   padding-top: 0.125rem;
   padding-bottom: 0.125rem;
 }
@@ -143,14 +171,13 @@ blockquote + * {
 
 ul {
   clear: both;
-  padding-top: 0.25rem;
-  margin-bottom: 1rem;
   list-style: none;
 }
 
 li {
   position: relative;
-  padding-left: 0.375rem;
+  padding-left: 0.5rem;
+  margin-bottom: 0.125rem;
   font-size: 0.75rem;
   overflow: hidden;
 }
@@ -161,46 +188,8 @@ li::before {
   content: '•';
 }
 
-h2 + ul {
-  padding-top: 0;
-}
-
-blockquote + ul > li,
-h2 + ul > li {
-  padding-left: 0;
-}
-
-h2 + ul > li {
-  padding-bottom: 0.25rem;
-}
-
-h2 + ul > li:last-child {
-  padding-bottom: 0;
-}
-
-h2 + ul > li::before,
-blockquote + ul > li::before,
-li li::before {
-  content: ''
-}
-
-li > ul {
-  margin-bottom: 0;
-}
-
-li li {
-  font-size: 0.625rem;
-}
-
-@media (min-device-width: 500px) {
-  li > ul {
-    float: right;
-    padding: 0;
-  }
-
-  li li {
-    font-size: inherit;
-  }
+thead {
+  display: none;
 }
 
 @media print, (min-device-width: 768px) {
@@ -210,57 +199,82 @@ li li {
   }
 
   h1,
-  h2,
-  h3,
-  p,
-  blockquote,
-  ul {
+  h1 + p {
     padding-left: 2.25rem;
+  }
+
+  h1 + p {
+    float: left;
+  }
+
+  h1 + p + blockquote {
     padding-right: 2.25rem;
   }
 
-  blockquote + ul {
+  h2 {
+    float: left;
+    margin-top: 0.5rem;
+    margin-left: 2.25rem;
+  }
+
+  blockquote {
+    float: right;
+    text-align: right;
+    margin-left: 0;
+    margin-right: 2.25rem;
+  }
+
+  p,
+  ul,
+  table {
     margin-left: 2.25rem;
     margin-right: 2.25rem;
   }
 
-  h3, p {
-    float: left;
-    padding-right: 0;
-  }
-
-  blockquote {
-    clear: none;
-    overflow: hidden;
-    text-align: right;
-    padding-left: 0;
+  table {
+    width: calc(100% - 4.5rem);
   }
 }
 
 @media print {
   html {
-    font-size: 15pt;
+    font-size: 13pt;
     background-color: #fff;
   }
 
   body {
-    width: 40.8rem;
+    width: 100%;
   }
 
   h1,
-  h2,
-  h3,
-  p,
-  blockquote,
-  ul {
+  h1 + p {
     padding-left: 2.4rem;
+  }
+
+  h1 + p + blockquote {
     padding-right: 2.4rem;
   }
 
-  blockquote + ul {
+  h2 {
+    margin-left: 2.4rem;
+  }
+
+  blockquote {
+    margin-right: 2.4rem;
+  }
+
+  p,
+  ul,
+  table {
     margin-left: 2.4rem;
     margin-right: 2.4rem;
   }
 
-  .screen-only { display: none; }
+  table {
+    width: calc(100% - 4.8rem);
+  }
+
+  .screen-only {
+    display: none;
+  }
 }
