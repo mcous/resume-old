@@ -1,41 +1,57 @@
-// compile the HTML build to PDF
-'use strict'
+import assert from 'node:assert'
+import path from 'node:path'
+import process from 'node:process'
+import url from 'node:url'
 
-const { read: readFile } = require('to-vfile')
-const puppeteer = require('puppeteer')
-const hummus = require('hummus')
+import hummus from 'hummus'
 
-function buildPdf(htmlFile, buildParams) {
-  const { cssSource, pdfOutputPath, pdfRenderDelay } = buildParams
+import { HOST, PORT, CLIENT_DIST, createServer } from './serve.js'
+import { renderPdfToFile } from './render-pdf.js'
 
-  let _browser
-  let _page
+const PDF_NAME = 'michael-cousins.pdf'
+const PDF_OUTPUT_PATH = path.join(CLIENT_DIST, PDF_NAME)
 
-  return puppeteer
-    .launch()
-    .then((browser) => {
-      _browser = browser
-      return browser.newPage()
-    })
-    .then((page) => {
-      _page = page
-      return page.setContent(htmlFile.contents)
-    })
-    .then(() => _page.addStyleTag({ path: cssSource }))
-    .then(() => _page.waitForTimeout(pdfRenderDelay))
-    .then(() => _page.pdf({ path: pdfOutputPath, preferCSSPageSize: true }))
-    .then(() => _browser.close())
-    .then(() => {
-      const writer = hummus.createWriterToModify(pdfOutputPath)
-      const info = writer.getDocumentContext().getInfoDictionary()
+const PPI = 72
+const EXPECTED_WIDTH_IN = 8.5
+const EXPECTED_HEIGHT_IN = 11
 
-      info.author = buildParams.author
-      info.title = buildParams.title
-      info.subject = buildParams.description
+export async function buildPdf() {
+  const app = await createServer('preview')
+  const server = await app.listen(PORT)
 
-      writer.end()
-    })
-    .then(() => readFile(pdfOutputPath))
+  try {
+    await renderPdfToFile(`http://${HOST}:${PORT}/resume/`, PDF_OUTPUT_PATH)
+  } finally {
+    server.close()
+  }
+
+  return PDF_OUTPUT_PATH
 }
 
-module.exports = { buildPdf }
+export function validatePdf(pdfPath) {
+  const pdfReader = hummus.createReader(pdfPath)
+  const pageCount = pdfReader.getPagesCount()
+
+  assert(pageCount === 1, `Expected one PDF page, got ${pageCount}`)
+
+  const [x, y, width, height] = pdfReader.parsePage(0).getMediaBox()
+  const [widthIn, heightIn] = [width / PPI, height / PPI]
+
+  assert(x === 0 && y === 0, `Expected origin (0, 0), got (${x}, ${y})`)
+  assert(
+    widthIn === 8.5 && heightIn === 11,
+    `Expected page size (${EXPECTED_WIDTH_IN}", ${EXPECTED_HEIGHT_IN}"), got (${widthIn}, ${heightIn})`
+  )
+}
+
+if (process.argv[1] === url.fileURLToPath(import.meta.url)) {
+  buildPdf()
+    .then(outputPath => {
+      validatePdf(outputPath)
+      console.log(`Wrote PDF to ${outputPath}`)
+    })
+    .catch(error => {
+      console.error('Error building PDF', error)
+      process.exitCode = 1
+    })
+}
