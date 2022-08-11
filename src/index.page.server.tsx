@@ -67,7 +67,7 @@ export function Page(): JSX.Element {
               name="Opentrons Labworks"
               summary={[
                 '5 years',
-                'Liquid handling robots for biologists',
+                'Open-source liquid handling robots for biologists',
                 <Link href="https://www.opentrons.com">opentrons.com</Link>,
               ]}
               roles={[
@@ -82,9 +82,9 @@ export function Page(): JSX.Element {
                   experiment reproducibility problems
                 </p>,
                 <p>
-                  Skilling my teams up on testing best practices, increasing
-                  overall speed by decreasing unexpected bugs and time spent in
-                  QA
+                  Teaching engineers on my team testing best practices,
+                  increasing overall velocity by decreasing unexpected bugs and
+                  time spent in QA
                 </p>,
                 <p>
                   Designing and managing the implementation of a new execution
@@ -219,7 +219,7 @@ export function Page(): JSX.Element {
             <TitledList title="Backend" m="b-2">
               <span>HTTP API design</span>
               <span>Reliable concurrency</span>
-              <span>Service-oriented architecture</span>
+              <span>Event-driven architecture</span>
             </TitledList>
             <TitledList title="Spicy Takes">
               <span>Promises are better than async/await</span>

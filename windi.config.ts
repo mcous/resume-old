@@ -9,7 +9,7 @@ export default defineConfig({
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Open SansVariable', ...defaultTheme.fontFamily.sans],
+        sans: ['Open Sans', ...defaultTheme.fontFamily.sans],
       },
       fontSize: {
         sm: '10px',

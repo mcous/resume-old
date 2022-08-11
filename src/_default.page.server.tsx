@@ -4,7 +4,7 @@ import { escapeInject as html, dangerouslySkipEscape } from 'vite-plugin-ssr'
 import type { ComponentType } from 'preact'
 import type { PageContextBuiltIn } from 'vite-plugin-ssr'
 
-import '@fontsource/open-sans/variable.css'
+import '@fontsource/open-sans/400.css'
 import 'virtual:windi.css'
 
 interface PageContext extends PageContextBuiltIn {
