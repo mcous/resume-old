@@ -1,90 +1,63 @@
-// serve build artifacts
-'use strict'
+import path from 'node:path'
+import process from 'node:process'
+import url from 'node:url'
 
-const fs = require('fs')
-const path = require('path')
-const express = require('express')
-const tinyLr = require('tiny-lr')
-const injectLr = require('inject-lr-script')
-const bodyParser = require('body-parser')
+import express from 'express'
+import { createServer as createViteServer } from 'vite'
+import { renderPage } from 'vite-plugin-ssr'
 
-const pkg = require('../package.json')
-const {
-  BUILD_PARAMS,
-  ensureOutputDir,
-  buildCss,
-  buildHtml,
-  buildPdf,
-} = require('./build')
+import { renderPdf } from './render-pdf.js'
 
-const SERVER_PARAMS = {
-  ...BUILD_PARAMS,
-  outputDir: path.join(__dirname, '../.server-cache'),
-  serverHost: pkg.config.server.host,
-  serverPort: pkg.config.server.port,
-}
+const ROOT = path.join(path.dirname(url.fileURLToPath(import.meta.url)), '..')
 
-function createServer(serverParams) {
+export const PORT = 5173
+export const HOST = 'localhost'
+export const CLIENT_DIST = path.join(ROOT, 'dist/client')
+
+export async function createServer(mode) {
   const app = express()
 
-  return app
-    .use(injectLr({ port: serverParams.port }))
-    .use(bodyParser.json())
-    .use(tinyLr.middleware({ app: app }))
-    .get(serverParams.publicUrlPath, html)
-    .get(`${serverParams.publicUrlPath}${serverParams.htmlOutputName}`, html)
-    .get(`${serverParams.publicUrlPath}${serverParams.cssOutputName}`, css)
-    .get(`${serverParams.publicUrlPath}${serverParams.pdfOutputName}`, pdf)
-
-  function html(req, res, next) {
-    const htmlBuild = buildHtml(serverParams)
-    const cssBuild = buildCss(serverParams)
-
-    Promise.all([htmlBuild, cssBuild])
-      .then(([htmlFile]) => {
-        res.send(htmlFile.contents)
-      })
-      .catch(next)
+  if (mode !== 'dev') {
+    return app.use('/resume/', express.static(CLIENT_DIST))
   }
 
-  function css(req, res, next) {
-    buildCss(serverParams)
-      .then((cssFile) => res.type('css').send(cssFile.contents))
-      .catch(next)
-  }
+  const vite = await createViteServer({
+    root: ROOT,
+    server: { middlewareMode: true },
+  })
 
-  function pdf(req, res, next) {
-    const htmlBuild = buildHtml(serverParams)
-    const pdfBuild = htmlBuild.then((htmlFile) =>
-      buildPdf(htmlFile, serverParams)
+  app.use(vite.middlewares)
+
+  app.get('*', async (request, response, next) => {
+    const url = request.originalUrl
+    const pageContextInit = { url }
+    const { httpResponse } = await renderPage(pageContextInit)
+
+    if (!httpResponse) return next()
+    const { body, statusCode, contentType } = httpResponse
+    response.status(statusCode).type(contentType).send(body)
+  })
+
+  app.get(`/*.pdf`, async (request, response) => {
+    const pdfContents = await renderPdf(
+      `${request.protocol}://${request.get('host')}/resume/`
     )
+    response.status(200).type('application/pdf').send(pdfContents)
+  })
 
-    pdfBuild.then((pdf) => res.type('pdf').send(pdf.contents)).catch(next)
-  }
+  return app
 }
 
-function handleChange(change, path) {
-  console.log(`${path} ${change}d`)
-  tinyLr.changed(path)
-}
+if (process.argv[1] === url.fileURLToPath(import.meta.url)) {
+  const [mode = 'dev'] = process.argv.slice(2)
 
-module.exports = { createServer }
-
-if (require.main === module) {
-  const params = SERVER_PARAMS
-  const app = createServer(params)
-  const url = `http://${params.serverHost}:${params.serverPort}${params.publicUrlPath}`
-
-  ensureOutputDir(params)
+  createServer(mode)
+    .then(app => app.listen(PORT))
     .then(() => {
-      app
-        .listen({ host: params.serverHost, port: params.serverPort }, () =>
-          console.log(`Serving at ${url}`)
-        )
-        .once('error', (error) => console.error(error))
+      console.log(`Server listening at http://${HOST}:${PORT}/resume/`)
     })
-    .catch(console.error)
-
-  fs.watch(params.markdownSource, handleChange)
-  fs.watch(params.cssSource, handleChange)
+    .catch(error => {
+      console.error('Error starting server', error)
+      process.exitCode = 1
+    })
 }
